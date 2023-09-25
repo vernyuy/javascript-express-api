@@ -13,7 +13,7 @@ api.get("/greet/:name", (req, res) => {
   const { name } = req.params;
   const test = storage();
 
-  test.write("./image.png");
+  test.write("./image.png", image);
 
   if (!name) {
     return res.status(400).send({ message: "Missing route param for `name`!" });
