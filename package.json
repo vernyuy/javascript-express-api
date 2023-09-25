@@ -6,7 +6,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "ampt"
+    "start": "ampt",
+    "ampt:dev": "node run index.js"
   },
   "dependencies": {
     "@ampt/sdk": "latest",
@@ -15,5 +16,8 @@
   "ampt": {
     "app": "javascript-express-api",
     "org": "fonchuevenyuy803908"
-  }
+  },
+  "files": [
+    "*"
+  ]
 }

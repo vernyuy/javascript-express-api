@@ -1,4 +1,4 @@
-import { http } from "@ampt/sdk";
+import { http, storage } from "@ampt/sdk";
 import express, { Router } from "express";
 
 const app = express();
@@ -11,6 +11,9 @@ api.get("/hello", (req, res) => {
 
 api.get("/greet/:name", (req, res) => {
   const { name } = req.params;
+  const test = storage();
+
+  test.write("image.png", binaryData);
 
   if (!name) {
     return res.status(400).send({ message: "Missing route param for `name`!" });
