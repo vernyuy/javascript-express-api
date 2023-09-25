@@ -1,13 +1,8 @@
 import { http, storage } from "@ampt/sdk";
 import express, { Router } from "express";
-
 const app = express();
 
 const api = Router();
-
-api.get("/hello", (req, res) => {
-  return res.status(200).send({ message: "Hello from the public api!" });
-});
 
 api.get("/greet/:name", (req, res) => {
   const { name } = req.params;
@@ -21,6 +16,8 @@ api.get("/greet/:name", (req, res) => {
 
   return res.status(200).send({ message: `Hello ${name}!` });
 });
+
+app.use("/users", require("./routes/user"));
 
 api.post("/submit", async (req, res) => {
   return res.status(200).send({
